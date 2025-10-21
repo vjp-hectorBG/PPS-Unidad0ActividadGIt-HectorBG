@@ -22,8 +22,9 @@ class Calculator:
     def on_click(self, char):
         if char == '=':
             try:
+                result = str(eval(self.result.get()))
                 self.result.delete(0, tk.END)
-                self.result.insert(tk.END, str(eval(self.result.get())))
+                self.result.insert(tk.END, result)
             except Exception:
                 self.result.delete(0, tk.END)
                 self.result.insert(tk.END, "Error")
